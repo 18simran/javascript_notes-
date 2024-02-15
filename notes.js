@@ -284,3 +284,86 @@ let a = 35; //strict mode means we have to define whether a variable is var,let 
 console.log(a);
 
 //GETTERS AND SETTERS
+//static method
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  walk() {
+    console.log(`Animal ${Animal.capitalize(this.name)} is walking`);
+  }
+  static capitalize(name) {
+    return name.charAt(0).toUpperCase() + name.substr(1, name.length);
+  }
+}
+const dogi = new Animal('tuffy');
+dogi.walk();
+//object.create
+const PersonProto = {
+  clacAge() {
+    console.log(2037 - this.birthYear);
+  },
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+const ob1 = Object.create(PersonProto);
+console.log(ob1);
+ob1.name = 'payal';
+ob1.birthYear = 2003;
+ob1.clacAge();
+const ob2 = Object.create(PersonProto);
+ob2.init('sarah', 1979);
+ob2.clacAge();
+
+//challenge 2
+class nCar {
+  constructor(name, speed) {
+    this.name = name;
+    this.speed = speed;
+  }
+  accelerate() {
+    this.speed += 10;
+    console.log(`${this.name} is going at ${this.speed}`);
+  }
+  brake() {
+    this.speed -= 5;
+    console.log(`${this.name} is going at ${this.speed}`);
+  }
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+  set speedUS(speed) {
+    this.speed = speed * 1.6;
+  }
+}
+const ford = new nCar('Ford', 120);
+console.log(ford.speedUS);
+ford.accelerate();
+ford.brake();
+ford.speedUS = 50;
+console.log(ford);
+
+//inheritance
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+Person.prototype.calcAge = function () {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+const sofia = new Person('sofia', 2003);
+console.log(sofia);
+const Student = function (firstName, birthYear, course) {
+  // this.firstName = firstName;
+  // this.birthYear = birthYear; instead of duplicating the same things we can call person function
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and i study ${this.course}`);
+};
+const Mike = new Student('Mike', 2020, 'Computer Science ');
+Mike.introduce();
