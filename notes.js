@@ -345,7 +345,7 @@ ford.brake();
 ford.speedUS = 50;
 console.log(ford);
 
-//inheritance
+//inheritance - means child element inheriting parent element
 const Person = function (firstName, birthYear) {
   this.firstName = firstName;
   this.birthYear = birthYear;
