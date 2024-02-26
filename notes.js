@@ -367,3 +367,11 @@ Student.prototype.introduce = function () {
 };
 const Mike = new Student('Mike', 2020, 'Computer Science ');
 Mike.introduce();
+
+// 🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼🌼
+// Memory Management
+// Memory management in JavaScript is vital, primarily because it’s a garbage-collected language. There are two primary storage components: stack and heap.
+
+// Stack: Fast memory where local primitives and reference addresses (to objects in the heap) are stored. It’s automatically managed, meaning local variables get popped off the stack when they’re no longer needed.
+// Heap: A larger, slower memory store where objects are stored. Here, memory is allocated and deallocated dynamically.
+// Garbage Collection: JavaScript uses a mechanism called garbage collection to automatically find and reclaim memory that’s no longer used. It primarily uses a method called “mark-and-sweep.” Understanding how garbage collection works is vital for writing efficient Node.js apps, especially those that require significant uptime.
