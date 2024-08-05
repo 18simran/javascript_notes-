@@ -160,3 +160,18 @@ const ownerEatLittle = dogs
   .filter((dog) => dog.curFood < dog.recommendedFood)
   .flatMap((dog) => dog.owners);
 console.log(ownerEatLittle);
+
+const menu = document.querySelector('#menu');
+let isMenuDisplayed = false;
+
+function toggleMenu() {
+  const element = document.querySelector('.m');
+  if (isMenuDisplayed) {
+    element.classList.remove('menuSection');
+  } else {
+    element.classList.add('menuSection');
+  }
+  isMenuDisplayed = !isMenuDisplayed;
+}
+
+menu.addEventListener('click', toggleMenu);
