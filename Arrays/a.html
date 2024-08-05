@@ -5,8 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      .menu {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        background-color: black;
+        color: aliceblue;
+        font-size: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 25px;
+      }
+      .menu ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+      }
+      .menu ul:hover {
+        box-shadow: 5px 7px 7px #009a55;
+        cursor: pointer;
+      }
+      .menuSection {
+        background-color: #009a55;
+        height: 89.5vh;
+        position: absolute;
+        top: 10.5vh;
+        left: 0;
+        width: 100%;
+      }
+      .welcome {
+        background-image: url(./gallery-4.jpg);
+        height: 89.5vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;2
+      }
+      .welcome h1 {
+        font-size: 50px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+      }
+    </style>
+    <nav>
+      <li class="menu">
+        <ul id="menu">
+          Menu
+        </ul>
+        <ul>
+          About
+        </ul>
+        <ul>
+          Resources
+        </ul>
+        <ul>
+          Data
+        </ul>
+        <ul>
+          Contact
+        </ul>
+      </li>
+    </nav>
   </head>
   <body>
+    <section class="welcome">
+      <h1>welcome</h1>
+    </section>
+    <section class="m"></section>
     <script src="./a.js"></script>
   </body>
 </html>
