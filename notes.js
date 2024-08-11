@@ -378,3 +378,53 @@ Mike.introduce();
 
 // 💲💲💲💲💲💲💲💲💲💲💲💲💲
 //Hoisting is JavaScript's default behavior of moving declarations to the top
+console.log('💲💲💲💲💲💲💲💲💲💲💲💲💲');
+// Hoisting
+var c;
+function codeHoist() {
+  a = 10;
+  c = 20;
+  let b = 50;
+}
+codeHoist();
+
+console.log(a); // 10
+console.log(c);
+// console.log(b); // ReferenceError : b is not defined
+let add;
+
+add = (a, b) => a + b;
+console.log('sum is ' + add(5, 10)); // Error: Cannot access 'add' before initialization
+
+console.log(add);
+// API calls
+const recipesSection = document.querySelector('.recipes');
+const request = new XMLHttpRequest();
+const text = 'pizza';
+request.open(
+  'GET',
+  `https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes&q=${text}`
+);
+request.setRequestHeader(
+  'X-RapidAPI-Key',
+  'b4066d0cd4msh18832150e056665p16383ejsn170860891360'
+);
+request.setRequestHeader('X-RapidAPI-Host', 'tasty.p.rapidapi.com');
+request.send();
+request.addEventListener('load', function () {
+  const data = JSON.parse(this.responseText);
+  const arr_len = data.results.length;
+  for (let i = 0; i < 20; i++) {
+    const title = data.results[i].name;
+    const description = data.results[i].description;
+    const cake = data.results[i].thumbnail_url;
+    const html = `
+      <div class="recipe">
+      <h1>${title}</h1>
+        <p>${description}</p>
+        <img src="${cake}"  alt="cake"> </img>
+      </div>
+  `;
+    recipesSection.insertAdjacentHTML('beforeend', html);
+  }
+});
