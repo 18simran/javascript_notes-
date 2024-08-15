@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+    <style>
+      * {
+        margin: 0 auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        height: auto;
+        background: #7dd5ee;
+      }
+      section {
+        background: rgb(240, 233, 175);
+        width: 500px;
+        margin: 40px auto;
+        height: auto;
+        padding: 20px;
+      }
+      .para {
+        font-size: 18px;
+        color: #022048;
+        padding: 0 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #0448a0;
+        font-size: 50px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .h2 {
+        font-size: 30px;
+        color: #022048;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .start {
+        font-size: 18px;
+        text-align: center;
+      }
+      .read_more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      a {
+        display: block;
+        background-color: #022048;
+        width: 80px;
+        height: 20px;
+        color: beige;
+        padding: 8px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        margin: 20px;
+      }
+      li {
+        margin-bottom: 10px;
+        color: #022048;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Promises</h1>
+    <section>
+      <p class="h2">Bubbling and capturing</p>
+      <div class="start">
+        Start
+        <div class="para">
+          Event bubbling and capturing are ways events propagate through the
+          DOM. Bubbling starts at the innermost element where the event occurs
+          and travels up through parent elements. Capturing is the opposite,
+          starting at the outermost element and moving down to the target. By
+          default, events bubble up, and capturing is less commonly used.
+
+          <div class="read_more"><a> Read More!</a></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <p class="h2">Delegation</p>
+      <ul type="circle">
+        <li>
+          Single listener: Attach one event listener to a parent element.li
+        </li>
+        <li>
+          Event bubbling: When a child element is clicked, the event bubbles up
+          to the parent.
+        </li>
+        <li>
+          Identify target: Determine which child element was clicked using
+          event.target.
+        </li>
+        <li>
+          Handle event: Perform actions based on the clicked child element.
+        </li>
+        <li>
+          Efficiency: Reduces the number of event listeners needed, improving
+          performance.
+        </li>
+      </ul>
+    </section>
+    <script src="p.js"></script>
+  </body>
+</html>
