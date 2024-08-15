@@ -400,7 +400,7 @@ console.log(add);
 // API calls
 const recipesSection = document.querySelector('.recipes');
 const request = new XMLHttpRequest();
-const text = 'pizza';
+const text = 'cake';
 request.open(
   'GET',
   `https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes&q=${text}`
