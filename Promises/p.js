@@ -109,7 +109,7 @@ list.addEventListener('click', (event) => {
     console.log(event.target.textContent);
   }
 });
-
+//🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️
 // document.addEventListener(
 //   'load',
 //   setTimeout(() => {
@@ -132,3 +132,74 @@ Person.prototype.getFullName = function () {
   return this.firstName + ' ' + this.lastName;
 };
 console.log(person1.getFullName());
+
+function User(fName, lName, birth) {
+  this.fName = fName;
+  this.lName = lName;
+  this.birth = birth;
+}
+User.prototype.getFullName = function () {
+  return this.fName + this.lName;
+};
+User.prototype.getAge = function () {
+  let age = new Date().getFullYear() - this.birth;
+  return age;
+};
+let student = new User('Simran', 'Kaur', 2003);
+let teacher = new User('Arti', 'Sharma', 1979);
+console.log(teacher.getFullName());
+console.log(
+  teacher.getFullName() + ' age is  ' + teacher.getAge() + ' teacher age'
+);
+console.log(
+  student.getFullName() + ' age is  ' + student.getAge() + ' student age'
+);
+//🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️
+//Prototypal Inheritance
+function Flower(name) {
+  this.name = name;
+}
+
+Flower.prototype.greet = function () {
+  console.log('Hello, I am ' + this.name);
+};
+
+const F1 = new Flower('Lily');
+const F2 = new Flower('Lotus');
+
+F1.greet();
+F2.greet();
+//🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️
+console.log('🌼 Closures 🌼');
+const book = () => {
+  let bookname = 'Alchemist';
+  const notes = (bookname) => {
+    console.log('These are the notes of ' + bookname + ' book .');
+  };
+  notes(bookname);
+
+  return bookname;
+};
+const bookOutput = book();
+console.log(bookOutput);
+//🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️
+//Getters and Setters
+class Employee {
+  constructor(firstName, lastName) {
+    this._fullName = `${firstName} ${lastName}`;
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+
+  set fullName(value) {
+    this._fullName = value;
+  }
+}
+
+const person = new Employee('John', 'Doe');
+console.log(person.fullName);
+
+person.fullName = 'Jane Smith';
+console.log(person.fullName);
