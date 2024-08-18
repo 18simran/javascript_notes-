@@ -197,9 +197,35 @@ class Employee {
     this._fullName = value;
   }
 }
-
 const person = new Employee('John', 'Doe');
 console.log(person.fullName);
 
 person.fullName = 'Jane Smith';
 console.log(person.fullName);
+//🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️
+//Super keyword
+class parent {
+  sayHlo() {
+    return 'HEllo';
+  }
+  constructor(name) {
+    this.name = name;
+  }
+}
+class child extends parent {
+  constructor(name, age) {
+    super(name);
+    {
+      this.name = name;
+    }
+    this.age = age;
+  }
+  greet() {
+    return `${super.sayHlo()}`;
+  }
+}
+const childName = new parent('simran');
+console.log(childName.name);
+const childNameAge = new child('smaeyra', 21);
+//const childcons = new child();
+console.log(new child().greet());
