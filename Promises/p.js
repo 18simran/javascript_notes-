@@ -229,3 +229,50 @@ console.log(childName.name);
 const childNameAge = new child('smaeyra', 21);
 //const childcons = new child();
 console.log(new child().greet());
+
+//🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️🕊️
+//static keyword
+class Circle {
+  r = 5;
+  AreaCircle(r) {
+    return 3.14 * r * r;
+  }
+}
+console.log(Circle.r); // can see that it shows undefined but with the object it does work
+const cir = new Circle();
+console.log(cir.r);
+console.log(cir.AreaCircle(5)); //But we can directly call class properties without creating an object
+
+class Square {
+  static side = 5;
+  static AreaSquare(s) {
+    return s * s;
+  }
+}
+
+console.log(Square.AreaSquare(5));
+console.log(Square.side);
+
+let pro = fetch('https://dummyjson.com/products');
+pro
+  .then((res) => res.json())
+  .then((d) => {
+    const productsLength = d.products.length;
+    console.log(d.products[1]);
+    const container = document.querySelector('.shopping');
+    for (let i = 0; i < productsLength; i++) {
+      const productContainers = document.querySelector('.product-containers');
+      productContainers.innerHTML += `
+      
+      <div class="product-container">
+      <img src="${d.products[i].thumbnail}" alt="${d.products[i].brand}">
+        <h2>${d.products[i].title}</h2>
+        <p>${d.products[i].description}</p>
+        <button>Add to Cart</button>   
+
+      </div>
+      
+      `;
+      container.appendChild(productContainers);
+    }
+  });
