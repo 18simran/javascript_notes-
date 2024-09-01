@@ -63,6 +63,35 @@
         margin-bottom: 10px;
         color: #022048;
       }
+      .shopping {
+      }
+      .product-containers {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        width: 500px;
+      }
+      .product-container {
+        background-color: rgb(255, 220, 252);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 30px;
+        width: 350px;
+        border-bottom: 5px double rgba(165, 42, 42, 0.92);
+        border-right: 5px double rgba(165, 42, 42, 0.92);
+      }
+      .product-container img {
+        height: 200px;
+      }
+      .product-container button {
+        background-color: rgb(177, 240, 219);
+        padding: 5px;
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
@@ -133,15 +162,7 @@
         environment.
       </p>
     </section>
-    <section>
-      <p class="h2">Closures</p>
-      <p class="para">
-        A closure is a function that has access to variables in its outer
-        (enclosing) function's scope, even after the outer function has
-        returned. In essence, it's a function bundled together with its lexical
-        environment.
-      </p>
-    </section>
+
     <section>
       <p class="h2">Super keyword</p>
       <p class="para">
@@ -156,6 +177,9 @@
         🔷Accessing Parent Properties and Methods: Use super.property or
         super.method() to access properties or methods of the parent class.
       </p>
+    </section>
+    <section class="shopping">
+      <div class="product-containers"></div>
     </section>
     <script src="p.js"></script>
   </body>
