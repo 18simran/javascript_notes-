@@ -6,7 +6,7 @@ body {
   width: 70rem;
   margin: auto;
 
-  background: lightgoldenrodyellow;
+  background-color: rgb(212, 246, 212);
 }
 .main {
   display: flex;
@@ -16,7 +16,7 @@ body {
 #btn {
   width: 15rem;
   height: 5rem;
-  background: rgba(250, 250, 166, 0.94);
+  background: green;
   border-radius: 20px;
 }
 .all_operations {
